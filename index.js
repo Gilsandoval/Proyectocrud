@@ -3,6 +3,7 @@ const correoUI = document.querySelector("#correo");
 const edadUI = document.querySelector("#edad");
 const sexoUI = document.querySelector("#sexo");
 const formulario = document.querySelector("#formulario");
+const listaPersonalUI = document.querySelector(".div-personal")
 
 formulario.addEventListener("submit", agregar);
 
@@ -30,9 +31,7 @@ function agregar(evento) {
     formulario.reset();
 }
 
-function mostrarListadoPersonal(datos) {
-    listaPersonalUI.innerHTML = ""; // Limpiar la lista antes de actualizar
-
+function mostrarListadoPersonal(datos){
     datos.forEach((persona) => {
         const personaHTML = `
             <p>Nombre: ${persona.nombre}</p>
@@ -42,7 +41,7 @@ function mostrarListadoPersonal(datos) {
             <hr>
         `;
         listaPersonalUI.innerHTML += personaHTML;
-    });
+    }); // Limpiar la lista antes de actualizar
 }
 
 // Cargar el listado de personal al cargar la página
